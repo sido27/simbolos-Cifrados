@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #datos2 {
+        float: right;
+      }
+      #button {
+        width: 80%;
+      }
+      #div {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="datos" rows="10" cols="50"> </textarea>
+    <textarea id="datos2" rows="10" cols="50"> </textarea>
+    <br />
+    <br />
+    <div id="div">
+      <button id="button">BUTTON</button>
+    </div>
+  </body>
+  <script src="./cifrado.js"></script>
+
+  <script>
+    let cifrado2 = [];
+
+    cifrado = cifrado.split(/\n|,|:|{|"|\[|}|\]| /);
+
+    // for (i = 1; i < cifrado.length; i = i + 2) {
+
+    // }
+
+    for (i in cifrado) {
+      if (cifrado[i] != "") {
+        //porque no sabía como ponerlo en regex
+        cifrado2.push(cifrado[i]);
+      }
+    }
+    console.log(cifrado2);
+  </script>
+</html>
