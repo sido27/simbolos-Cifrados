@@ -18,7 +18,7 @@
     </style>
   </head>
   <body>
-    <textarea id="datos" rows="10" cols="50"> </textarea>
+    <textarea id="datos" rows="10" cols="50">asdas:_ </textarea>
     <textarea id="datos2" rows="10" cols="50"> </textarea>
     <br />
     <br />
@@ -29,20 +29,40 @@
   <script src="./cifrado.js"></script>
 
   <script>
-    let cifrado2 = [];
+    let texto = document.getElementById("datos");
+    text = texto.innerHTML;
+    text = text.toUpperCase();
 
-    cifrado = cifrado.split(/\n|,|:|{|"|\[|}|\]| /);
+    let simbolo = [];
+    let codigo = [];
+    for (i = 14; i < cifrado.length; i = i + 31) {
+      simbolo.push(cifrado[i]);
+      codigo.push(cifrado[i + 14] + cifrado[i + 15]);
+    }
+
+    console.log(simbolo);
+    console.log(codigo);
+    console.log(text);
+    let textoCifrado = "";
+    for (i in text) {
+      for (j in simbolo) {
+        if (text[i] == simbolo[j]) {
+          textoCifrado += codigo[j] + " ";
+        }
+      }
+    }
+
+    document.getElementById("datos2").innerHTML = textoCifrado;
+
+    //14 45
+    // cifrado = cifrado.split(/\n|,|:|{|"|\[|}|\]| /);
 
     // for (i = 1; i < cifrado.length; i = i + 2) {
 
     // }
 
-    for (i in cifrado) {
-      if (cifrado[i] != "") {
-        //porque no sabía como ponerlo en regex
-        cifrado2.push(cifrado[i]);
-      }
-    }
-    console.log(cifrado2);
+    //
+    // console.log(cifrado[28]);
+    // console.log(cifrado[29]);
   </script>
 </html>
