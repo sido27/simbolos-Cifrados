@@ -18,7 +18,7 @@
     </style>
   </head>
   <body>
-    <textarea id="datos" rows="10" cols="50">asdas:_ </textarea>
+    <textarea id="datos" rows="10" cols="50">asdas:_</textarea>
     <textarea id="datos2" rows="10" cols="50"> </textarea>
     <br />
     <br />
@@ -48,6 +48,9 @@
       for (j in simbolo) {
         if (text[i] == simbolo[j]) {
           textoCifrado += codigo[j] + " ";
+        } else if (!simbolo.includes(text[i])) {
+          textoCifrado += "*" + " ";
+          break;
         }
       }
     }
